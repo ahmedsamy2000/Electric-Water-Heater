@@ -39,8 +39,8 @@ int main()
 }
 
 //ON/OFF interrupt
-void __vector_3(void)       __attribute__((signal));
-void __vector_3(void)
+void __vector_18(void)       __attribute__((signal));
+void __vector_18(void)
 {
 	if(Current_state==OFF){
 		Current_state = ON;
@@ -51,14 +51,14 @@ void __vector_3(void)
 	}
 }
 //temp time flag interrupt
-void __vector_7(void)       __attribute__((signal));
-void __vector_7(void)
+void __vector_6(void)       __attribute__((signal));
+void __vector_6(void)
 {
 	temp_measure_flag = 1;
 }
 //timer trips every 1 sec
-void __vector_10(void)       __attribute__((signal));
-void __vector_10(void)
+void __vector_19(void)       __attribute__((signal));
+void __vector_19(void)
 {
 	if ((Current_state==ON) || (Current_state==SETTING)){
 		setting_counter++;
